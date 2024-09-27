@@ -12,11 +12,13 @@ namespace Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class testEntities : DbContext
+    public partial class DataEntities : DbContext
     {
-        public testEntities()
-            : base("name=testEntities")
+        public DataEntities()
+            : base("name=DataEntities")
         {
         }
     
@@ -25,5 +27,53 @@ namespace Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ErrorLog> ErrorLog { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+        public virtual DbSet<AuditLogs> AuditLogs { get; set; }
+        public virtual DbSet<BuildVersion> BuildVersion { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Content> Content { get; set; }
+        public virtual DbSet<Referrals> Referrals { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Videos> Videos { get; set; }
+        public virtual DbSet<Address> Address { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<CustomerAddress> CustomerAddress { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategory { get; set; }
+        public virtual DbSet<ProductDescription> ProductDescription { get; set; }
+        public virtual DbSet<ProductModel> ProductModel { get; set; }
+        public virtual DbSet<ProductModelProductDescription> ProductModelProductDescription { get; set; }
+        public virtual DbSet<SalesOrderDetail> SalesOrderDetail { get; set; }
+        public virtual DbSet<SalesOrderHeader> SalesOrderHeader { get; set; }
+        public virtual DbSet<vGetAllCategories> vGetAllCategories { get; set; }
+        public virtual DbSet<vProductAndDescription> vProductAndDescription { get; set; }
+        public virtual DbSet<vProductModelCatalogDescription> vProductModelCatalogDescription { get; set; }
+    
+        [DbFunction("DataEntities", "ufnGetAllCategories")]
+        public virtual IQueryable<ufnGetAllCategories_Result> ufnGetAllCategories()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<ufnGetAllCategories_Result>("[DataEntities].[ufnGetAllCategories]()");
+        }
+    
+        [DbFunction("DataEntities", "ufnGetCustomerInformation")]
+        public virtual IQueryable<ufnGetCustomerInformation_Result> ufnGetCustomerInformation(Nullable<int> customerID)
+        {
+            var customerIDParameter = customerID.HasValue ?
+                new ObjectParameter("CustomerID", customerID) :
+                new ObjectParameter("CustomerID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<ufnGetCustomerInformation_Result>("[DataEntities].[ufnGetCustomerInformation](@CustomerID)", customerIDParameter);
+        }
+    
+        public virtual int uspLogError(ObjectParameter errorLogID)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspLogError", errorLogID);
+        }
+    
+        public virtual int uspPrintError()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspPrintError");
+        }
     }
 }
