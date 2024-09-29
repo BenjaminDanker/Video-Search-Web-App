@@ -4,46 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c4f6c75bde7549ae8f203ad2742c9b36" Name="Diagram1">
-        <EntityTypeShape EntityType="DataModel.ErrorLog" Width="1.5" PointX="8.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataModel.database_firewall_rules" Width="1.5" PointX="10.5" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataModel.AuditLogs" Width="1.5" PointX="15.25" PointY="10.75" />
-        <EntityTypeShape EntityType="DataModel.BuildVersion" Width="1.5" PointX="5.75" PointY="2.75" />
-        <EntityTypeShape EntityType="DataModel.Categories" Width="1.5" PointX="10.75" PointY="11.125" />
-        <EntityTypeShape EntityType="DataModel.Content" Width="1.5" PointX="13" PointY="10.125" />
-        <EntityTypeShape EntityType="DataModel.Referrals" Width="1.5" PointX="15.25" PointY="17.75" />
-        <EntityTypeShape EntityType="DataModel.Users" Width="1.5" PointX="13" PointY="14.625" />
-        <EntityTypeShape EntityType="DataModel.Videos" Width="1.5" PointX="15.25" PointY="13.875" />
-        <EntityTypeShape EntityType="DataModel.Address" Width="1.5" PointX="0.75" PointY="6.25" />
-        <EntityTypeShape EntityType="DataModel.Customer" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DataModel.CustomerAddress" Width="1.5" PointX="6" PointY="6.75" />
-        <EntityTypeShape EntityType="DataModel.Product" Width="1.5" PointX="6" PointY="12.5" />
-        <EntityTypeShape EntityType="DataModel.ProductCategory" Width="1.5" PointX="3.75" PointY="15.125" />
-        <EntityTypeShape EntityType="DataModel.ProductDescription" Width="1.5" PointX="6.75" PointY="18.25" />
-        <EntityTypeShape EntityType="DataModel.ProductModel" Width="1.5" PointX="3.75" PointY="12" />
-        <EntityTypeShape EntityType="DataModel.ProductModelProductDescription" Width="1.5" PointX="9" PointY="14" />
-        <EntityTypeShape EntityType="DataModel.SalesOrderDetail" Width="1.5" PointX="8.25" PointY="8.375" />
-        <EntityTypeShape EntityType="DataModel.SalesOrderHeader" Width="1.5" PointX="3" PointY="4.875" />
-        <EntityTypeShape EntityType="DataModel.vGetAllCategories" Width="1.5" PointX="0.75" PointY="11.75" />
-        <EntityTypeShape EntityType="DataModel.vProductAndDescription" Width="1.5" PointX="0.75" PointY="14.75" />
-        <EntityTypeShape EntityType="DataModel.vProductModelCatalogDescription" Width="1.5" PointX="13.75" PointY="2.75" />
+      <Diagram DiagramId="c4f6c75bde7549ae8f203ad2742c9b36" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="DataModel.ErrorLog" Width="1.5" PointX="15" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.AuditLogs" Width="1.5" PointX="12" PointY="2.75" />
+        <EntityTypeShape EntityType="DataModel.BuildVersion" Width="1.5" PointX="15.25" PointY="3.625" />
+        <EntityTypeShape EntityType="DataModel.Categories" Width="1.5" PointX="7.5" PointY="3.125" />
+        <EntityTypeShape EntityType="DataModel.Content" Width="1.5" PointX="9.75" PointY="2.125" />
+        <EntityTypeShape EntityType="DataModel.Referrals" Width="1.5" PointX="12" PointY="9.75" />
+        <EntityTypeShape EntityType="DataModel.Users" Width="1.5" PointX="9.75" PointY="6.625" />
+        <EntityTypeShape EntityType="DataModel.Videos" Width="1.5" PointX="12" PointY="5.875" />
         <AssociationConnector Association="DataModel.FK_AuditLogs_ContentID" />
         <AssociationConnector Association="DataModel.FK_AuditLogs_UserID" />
         <AssociationConnector Association="DataModel.FK_Content_CategoryID" />
         <AssociationConnector Association="DataModel.FK_Videos_ContentID" />
         <AssociationConnector Association="DataModel.FK_Referrals_UserID" />
-        <AssociationConnector Association="DataModel.FK_CustomerAddress_Address_AddressID" />
-        <AssociationConnector Association="DataModel.FK_SalesOrderHeader_Address_BillTo_AddressID" />
-        <AssociationConnector Association="DataModel.FK_SalesOrderHeader_Address_ShipTo_AddressID" />
-        <AssociationConnector Association="DataModel.FK_CustomerAddress_Customer_CustomerID" />
-        <AssociationConnector Association="DataModel.FK_SalesOrderHeader_Customer_CustomerID" />
-        <AssociationConnector Association="DataModel.FK_Product_ProductCategory_ProductCategoryID" />
-        <AssociationConnector Association="DataModel.FK_Product_ProductModel_ProductModelID" />
-        <AssociationConnector Association="DataModel.FK_SalesOrderDetail_Product_ProductID" />
-        <AssociationConnector Association="DataModel.FK_ProductCategory_ProductCategory_ParentProductCategoryID_ProductCategoryID" />
-        <AssociationConnector Association="DataModel.FK_ProductModelProductDescription_ProductDescription_ProductDescriptionID" />
-        <AssociationConnector Association="DataModel.FK_ProductModelProductDescription_ProductModel_ProductModelID" />
-        <AssociationConnector Association="DataModel.FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID" />
+        <EntityTypeShape EntityType="DataModel.database_firewall_rules" Width="1.5" PointX="14.875" PointY="9.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

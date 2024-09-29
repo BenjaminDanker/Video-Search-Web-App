@@ -28,7 +28,6 @@ namespace Data
         }
     
         public virtual DbSet<ErrorLog> ErrorLog { get; set; }
-        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
         public virtual DbSet<AuditLogs> AuditLogs { get; set; }
         public virtual DbSet<BuildVersion> BuildVersion { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }
@@ -36,19 +35,7 @@ namespace Data
         public virtual DbSet<Referrals> Referrals { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Videos> Videos { get; set; }
-        public virtual DbSet<Address> Address { get; set; }
-        public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<CustomerAddress> CustomerAddress { get; set; }
-        public virtual DbSet<Product> Product { get; set; }
-        public virtual DbSet<ProductCategory> ProductCategory { get; set; }
-        public virtual DbSet<ProductDescription> ProductDescription { get; set; }
-        public virtual DbSet<ProductModel> ProductModel { get; set; }
-        public virtual DbSet<ProductModelProductDescription> ProductModelProductDescription { get; set; }
-        public virtual DbSet<SalesOrderDetail> SalesOrderDetail { get; set; }
-        public virtual DbSet<SalesOrderHeader> SalesOrderHeader { get; set; }
-        public virtual DbSet<vGetAllCategories> vGetAllCategories { get; set; }
-        public virtual DbSet<vProductAndDescription> vProductAndDescription { get; set; }
-        public virtual DbSet<vProductModelCatalogDescription> vProductModelCatalogDescription { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     
         [DbFunction("DataEntities", "ufnGetAllCategories")]
         public virtual IQueryable<ufnGetAllCategories_Result> ufnGetAllCategories()
