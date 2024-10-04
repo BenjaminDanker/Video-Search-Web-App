@@ -194,9 +194,13 @@
                                        <span class="ql-formats d-flex">
                                           <button class="ql-link"></button>
                                           <button class="ql-image"></button>
-                                          <button class="ql-video"></button>
-                                       </span>
 
+                                          <!-- video popup modal button -->
+                                           <button type="button" class="" data-bs-toggle="modal" data-bs-target="#chooseTypeModal">
+                                               V
+                                           </button>
+
+                                       </span>
                                     </div>
                                     <div>
 
@@ -222,6 +226,53 @@
                                  </div>
                               </div>
                            </div>
+                            <!-- choose popup modal -->
+                            <!-- needs to be outside of toolbar div for button formatting-->
+                            <div class="modal fade" id="chooseTypeModal" tabindex="-1" aria-labelledby="chooseTypeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="chooseTypeModalLabel">Type</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <button type="button" id="ytbtn" class="btn btn-primary" data-bs-dismiss="modal">
+                                                <img src="assets\img\sample-img\img-1.jpg" class="img-fluid"/>
+                                            </button>
+                                            <button type="button" id="vmbtn" class="btn btn-primary" data-bs-dismiss="modal">
+                                                <img src="assets\img\sample-img\img-1.jpg" class="img-fluid"/>
+                                            </button>
+                                            <script src="assets\pages\video-post.js"></script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- videos popup modal -->
+                            <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="videoModalLabel">Videos</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <div class="cntr">
+                                              <div class="cntr-innr">
+                                                <label class="search" for="inpt_search">
+                                                  <input id="inpt_search" type="text" />
+                                                </label>
+                                                <p>Hover to see the magic.</p>
+                                              </div>
+                                            </div>
+
+                                            <script src="assets\pages\video-post.js"></script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                            <!-- END : Toolbar -->
 
                            <!-- Editor -->
@@ -2536,6 +2587,7 @@
 
    <!-- Initialize [ SAMPLE ] -->
    <script src="./assets/pages/blog-add-edit-post.js"></script>
+
 
 
 </body>

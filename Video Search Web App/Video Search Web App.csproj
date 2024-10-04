@@ -160,6 +160,7 @@
     <Content Include="assets\pages\tabulator.js" />
     <Content Include="assets\pages\text-editor.js" />
     <Content Include="assets\pages\tooltips-popovers.js" />
+    <Content Include="assets\pages\video-post.js" />
     <Content Include="assets\plugins\tagify.js" />
     <Content Include="assets\premium\boxed-bg\abstract\bg\1.jpg" />
     <Content Include="assets\premium\boxed-bg\abstract\bg\10.jpg" />
