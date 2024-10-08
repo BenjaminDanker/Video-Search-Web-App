@@ -88,8 +88,6 @@
           </Key>
           <Property Name="VideoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ContentID" Type="int" />
-          <Property Name="VideoTitle" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="VideoDescription" Type="text" />
           <Property Name="VideoURL" Type="varchar" MaxLength="500" />
           <Property Name="VideoSource" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -583,8 +581,6 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
               <MappingFragment StoreEntitySet="Videos">
                 <ScalarProperty Name="VideoSource" ColumnName="VideoSource" />
                 <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
-                <ScalarProperty Name="VideoDescription" ColumnName="VideoDescription" />
-                <ScalarProperty Name="VideoTitle" ColumnName="VideoTitle" />
                 <ScalarProperty Name="ContentID" ColumnName="ContentID" />
                 <ScalarProperty Name="VideoID" ColumnName="VideoID" />
               </MappingFragment>
