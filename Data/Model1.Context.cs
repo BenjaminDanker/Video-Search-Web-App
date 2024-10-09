@@ -36,6 +36,7 @@ namespace Data
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Videos> Videos { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+        public virtual DbSet<HtmlPosts> HtmlPosts { get; set; }
     
         [DbFunction("DataEntities", "ufnGetAllCategories")]
         public virtual IQueryable<ufnGetAllCategories_Result> ufnGetAllCategories()

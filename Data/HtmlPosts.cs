@@ -12,19 +12,18 @@ namespace Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Videos
+    public partial class HtmlPosts
     {
-        public int VideoID { get; set; }
-        public Nullable<int> ContentID { get; set; }
-        public string VideoTitle { get; set; }
-        public string VideoDescription { get; set; }
-        public string VideoURL { get; set; }
-        public string VideoSource { get; set; }
-        public string VideoTitle1 { get; set; }
-        public string VideoDescription1 { get; set; }
+        public int PostID { get; set; }
+        public string Title { get; set; }
+        public string ShortDescription { get; set; }
+        public string ContentBody { get; set; }
+        public Nullable<System.DateTime> PublishedDate { get; set; }
+        public bool IsActive { get; set; }
+        public Nullable<int> CategoryID { get; set; }
         public Nullable<int> UserID { get; set; }
     
-        public virtual Content Content { get; set; }
+        public virtual Categories Categories { get; set; }
         public virtual Users Users { get; set; }
     }
 }

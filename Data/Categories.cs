@@ -18,6 +18,7 @@ namespace Data
         public Categories()
         {
             this.Content = new HashSet<Content>();
+            this.HtmlPosts = new HashSet<HtmlPosts>();
         }
     
         public int CategoryID { get; set; }
@@ -25,5 +26,7 @@ namespace Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Content> Content { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HtmlPosts> HtmlPosts { get; set; }
     }
 }
