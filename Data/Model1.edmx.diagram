@@ -6,19 +6,23 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c4f6c75bde7549ae8f203ad2742c9b36" Name="Diagram1" ZoomLevel="88">
         <EntityTypeShape EntityType="DataModel.ErrorLog" Width="1.5" PointX="16.125" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataModel.AuditLogs" Width="1.5" PointX="2.75" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.AuditLogs" Width="1.5" PointX="2.75" PointY="2.5" />
         <EntityTypeShape EntityType="DataModel.BuildVersion" Width="1.5" PointX="16.125" PointY="0.5" />
-        <EntityTypeShape EntityType="DataModel.Categories" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="DataModel.Content" Width="1.5" PointX="0.5" PointY="3" />
-        <EntityTypeShape EntityType="DataModel.Referrals" Width="1.5" PointX="5.375" PointY="3.75" />
-        <EntityTypeShape EntityType="DataModel.Users" Width="1.5" PointX="5.375" PointY="0.5" />
-        <EntityTypeShape EntityType="DataModel.Videos" Width="1.5" PointX="8.5" PointY="3" />
+        <EntityTypeShape EntityType="DataModel.Categories" Width="1.5" PointX="2.75" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.Content" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DataModel.Referrals" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DataModel.Users" Width="1.5" PointX="0.5" PointY="4.25" />
+        <EntityTypeShape EntityType="DataModel.Videos" Width="1.5" PointX="4.625" PointY="2.375" />
         <AssociationConnector Association="DataModel.FK_AuditLogs_ContentID" />
         <AssociationConnector Association="DataModel.FK_AuditLogs_UserID" />
         <AssociationConnector Association="DataModel.FK_Content_CategoryID" />
         <AssociationConnector Association="DataModel.FK_Videos_ContentID" />
         <AssociationConnector Association="DataModel.FK_Referrals_UserID" />
         <EntityTypeShape EntityType="DataModel.database_firewall_rules" Width="1.5" PointX="16.125" PointY="2.5" />
+        <EntityTypeShape EntityType="DataModel.HtmlPosts" Width="1.5" PointX="6.5" PointY="2.25" />
+        <AssociationConnector Association="DataModel.FK_HtmlPosts_CategoryID" />
+        <AssociationConnector Association="DataModel.FK_HtmlPosts_UserID" />
+        <AssociationConnector Association="DataModel.FK_Videos_UserID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

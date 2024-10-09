@@ -60,6 +60,19 @@
           <Property Name="ErrorLine" Type="int" />
           <Property Name="ErrorMessage" Type="nvarchar" MaxLength="4000" Nullable="false" />
         </EntityType>
+        <EntityType Name="HtmlPosts">
+          <Key>
+            <PropertyRef Name="PostID" />
+          </Key>
+          <Property Name="PostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ShortDescription" Type="varchar" MaxLength="500" />
+          <Property Name="ContentBody" Type="text" Nullable="false" />
+          <Property Name="PublishedDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
         <EntityType Name="Referrals">
           <Key>
             <PropertyRef Name="ReferralID" />
@@ -90,6 +103,9 @@
           <Property Name="ContentID" Type="int" />
           <Property Name="VideoURL" Type="varchar" MaxLength="500" />
           <Property Name="VideoSource" Type="varchar" MaxLength="50" />
+          <Property Name="VideoTitle" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="VideoDescription" Type="text" />
+          <Property Name="UserID" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -145,6 +161,30 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_HtmlPosts_CategoryID">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="HtmlPosts" Type="Self.HtmlPosts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="HtmlPosts">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HtmlPosts_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="HtmlPosts" Type="Self.HtmlPosts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="HtmlPosts">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Referrals_UserID">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Referrals" Type="Self.Referrals" Multiplicity="*" />
@@ -166,6 +206,18 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
             </Principal>
             <Dependent Role="Videos">
               <PropertyRef Name="ContentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videos_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Videos" Type="Self.Videos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Videos">
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -205,6 +257,7 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Content" EntityType="Self.Content" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HtmlPosts" EntityType="Self.HtmlPosts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Referrals" EntityType="Self.Referrals" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Videos" EntityType="Self.Videos" Schema="dbo" store:Type="Tables" />
@@ -230,12 +283,24 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Content" EntitySet="Content" />
           </AssociationSet>
+          <AssociationSet Name="FK_HtmlPosts_CategoryID" Association="Self.FK_HtmlPosts_CategoryID">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="HtmlPosts" EntitySet="HtmlPosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HtmlPosts_UserID" Association="Self.FK_HtmlPosts_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HtmlPosts" EntitySet="HtmlPosts" />
+          </AssociationSet>
           <AssociationSet Name="FK_Referrals_UserID" Association="Self.FK_Referrals_UserID">
             <End Role="Users" EntitySet="Users" />
             <End Role="Referrals" EntitySet="Referrals" />
           </AssociationSet>
           <AssociationSet Name="FK_Videos_ContentID" Association="Self.FK_Videos_ContentID">
             <End Role="Content" EntitySet="Content" />
+            <End Role="Videos" EntitySet="Videos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videos_UserID" Association="Self.FK_Videos_UserID">
+            <End Role="Users" EntitySet="Users" />
             <End Role="Videos" EntitySet="Videos" />
           </AssociationSet>
         </EntityContainer>
@@ -305,6 +370,19 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
             <End Role="Referrals" EntitySet="Referrals" />
           </AssociationSet>
           <EntitySet Name="database_firewall_rules" EntityType="DataModel.database_firewall_rules" />
+          <EntitySet Name="HtmlPosts" EntityType="DataModel.HtmlPosts" />
+          <AssociationSet Name="FK_HtmlPosts_CategoryID" Association="DataModel.FK_HtmlPosts_CategoryID">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="HtmlPosts" EntitySet="HtmlPosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HtmlPosts_UserID" Association="DataModel.FK_HtmlPosts_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="HtmlPosts" EntitySet="HtmlPosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Videos_UserID" Association="DataModel.FK_Videos_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Videos" EntitySet="Videos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AuditLogs">
           <Key>
@@ -334,6 +412,7 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
           <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Content" Relationship="DataModel.FK_Content_CategoryID" FromRole="Categories" ToRole="Content" />
+          <NavigationProperty Name="HtmlPosts" Relationship="DataModel.FK_HtmlPosts_CategoryID" FromRole="Categories" ToRole="HtmlPosts" />
         </EntityType>
         <EntityType Name="Content">
           <Key>
@@ -377,6 +456,8 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
           <Property Name="DeviceID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="AuditLogs" Relationship="DataModel.FK_AuditLogs_UserID" FromRole="Users" ToRole="AuditLogs" />
           <NavigationProperty Name="Referrals" Relationship="DataModel.FK_Referrals_UserID" FromRole="Users" ToRole="Referrals" />
+          <NavigationProperty Name="HtmlPosts" Relationship="DataModel.FK_HtmlPosts_UserID" FromRole="Users" ToRole="HtmlPosts" />
+          <NavigationProperty Name="Videos" Relationship="DataModel.FK_Videos_UserID" FromRole="Users" ToRole="Videos" />
         </EntityType>
         <EntityType Name="Videos">
           <Key>
@@ -389,6 +470,10 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
           <Property Name="VideoURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="VideoSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Content" Relationship="DataModel.FK_Videos_ContentID" FromRole="Videos" ToRole="Content" />
+          <Property Name="VideoTitle1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="VideoDescription1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="DataModel.FK_Videos_UserID" FromRole="Videos" ToRole="Users" />
         </EntityType>
         <Association Name="FK_AuditLogs_ContentID">
           <End Type="DataModel.Content" Role="Content" Multiplicity="0..1" />
@@ -466,6 +551,57 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
           <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="HtmlPosts">
+          <Key>
+            <PropertyRef Name="PostID" />
+          </Key>
+          <Property Name="PostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ShortDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ContentBody" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PublishedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <NavigationProperty Name="Categories" Relationship="DataModel.FK_HtmlPosts_CategoryID" FromRole="HtmlPosts" ToRole="Categories" />
+          <NavigationProperty Name="Users" Relationship="DataModel.FK_HtmlPosts_UserID" FromRole="HtmlPosts" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_HtmlPosts_CategoryID">
+          <End Type="DataModel.Categories" Role="Categories" Multiplicity="0..1" />
+          <End Type="DataModel.HtmlPosts" Role="HtmlPosts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="HtmlPosts">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HtmlPosts_UserID">
+          <End Type="DataModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="DataModel.HtmlPosts" Role="HtmlPosts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="HtmlPosts">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Videos_UserID">
+          <End Type="DataModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="DataModel.Videos" Role="Videos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Videos">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -579,6 +715,9 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
           <EntitySetMapping Name="Videos">
             <EntityTypeMapping TypeName="DataModel.Videos">
               <MappingFragment StoreEntitySet="Videos">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="VideoDescription1" ColumnName="VideoDescription" />
+                <ScalarProperty Name="VideoTitle1" ColumnName="VideoTitle" />
                 <ScalarProperty Name="VideoSource" ColumnName="VideoSource" />
                 <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
                 <ScalarProperty Name="ContentID" ColumnName="ContentID" />
@@ -595,6 +734,20 @@ warning 6002: The table/view 'Data.sys.database_firewall_rules' does not have a 
                 <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HtmlPosts">
+            <EntityTypeMapping TypeName="DataModel.HtmlPosts">
+              <MappingFragment StoreEntitySet="HtmlPosts">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PublishedDate" ColumnName="PublishedDate" />
+                <ScalarProperty Name="ContentBody" ColumnName="ContentBody" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PostID" ColumnName="PostID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
