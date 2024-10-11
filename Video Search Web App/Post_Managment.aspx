@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-scheme="ocean">
+<html lang="en" data-bs-theme="light" data-scheme="navy">
 
 <head>
    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-   <meta name="description" content="Dashboard page with OffCanvas navigation.">
-   <title>Dashboard 3 | Nifty - Admin Template</title>
+   <meta name="description" content="Edit, publish, and remove post page layout">
+   <title>Manage Posts | Nifty - Admin Template</title>
 
 
    <!-- STYLESHEETS -->
@@ -62,397 +62,275 @@
 
 </head>
 
-<body class="out-quart centered-layout">
+<body class="out-quart">
 
 
    <!-- PAGE CONTAINER -->
    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-   <div id="root" class="root mn--slide tm--expanded-hd">
+   <div id="root" class="root mn--max tm--expanded-hd">
 
       <!-- CONTENTS -->
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
       <section id="content" class="content">
-         <div class="content__header content__boxed rounded-0">
+         <div class="content__header content__boxed overlapping">
             <div class="content__wrap">
 
 
-               <!-- Page title and information -->
-               <div class="text-center">
-                  <h1 class="page-title mb-3 mt-4">Dashboard</h1>
-                  <p class="lead mb-0">Hi <a href="#" class="fw-semibold btn-link text-decoration-underline">Aaron Chavez</a>! Welcome back to the Dashboard.</p>
-                  <p>Check out your past searches and the content you’ve browsed in. <a href="#" class="btn-link">View last results</a></p>
-               </div>
-               <!-- END : Page title and information -->
-
-               <div class="py-4 my-5">
-
-
-                  <!-- Line Chart -->
-                  <div style="height: 300px">
-                     <canvas id="_dm-lineChart"></canvas>
-                  </div>
-                  <!-- END : Line Chart -->
+               <!-- Breadcrumb -->
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                     <li class="breadcrumb-item"><a href="./blog-apps.html">Blog Apps</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Manage Posts</li>
+                  </ol>
+               </nav>
+               <!-- END : Breadcrumb -->
 
 
-               </div>
-
-               <div class="row mb-4">
-                  <div class="col-md-7">
-
-
-                     <!-- Statistic list -->
-                     <h3>Statistics</h3>
-                     <ol class="list-group list-group-borderless mb-4">
-                        <li class="list-group-item text-body-emphasis d-flex justify-content-between align-items-start px-0">
-                           <div class="me-auto">
-                              <div class="text-reset fs-5 fw-semibold">Completed Projects</div>
-                              <small class="text-reset opacity-50">Lorem ipsum dolor sit.</small>
-                           </div>
-                           <span class="badge bg-warning rounded-pill">14</span>
-                        </li>
-                        <li class="list-group-item text-body-emphasis d-flex justify-content-between align-items-start px-0">
-                           <div class="me-auto">
-                              <div class="text-reset fs-5 fw-semibold">Completed Tasks</div>
-                              <small class="text-reset opacity-50">Curabitur ligula sapien, tincidunt non.</small>
-                           </div>
-                           <span class="badge bg-danger rounded-pill">98</span>
-                        </li>
-                        <li class="list-group-item text-body-emphasis d-flex justify-content-between align-items-start px-0">
-                           <div class="me-auto">
-                              <div class="text-reset fs-5 fw-semibold">Resource usage</div>
-                              <small class="text-reset opacity-50">Consectetuer adipiscing elit.</small>
-                           </div>
-                           <span class="badge bg-info rounded-pill">25%</span>
-                        </li>
-                        <li class="list-group-item text-body-emphasis d-flex justify-content-between align-items-start px-0">
-                           <div class="me-auto">
-                              <div class="text-reset fs-5 fw-semibold">Earning</div>
-                              <small class="text-reset opacity-50">Aenean commodo ligula eget dolor.</small>
-                           </div>
-                           <span class="badge bg-success rounded-pill">$ 4,900</span>
-                        </li>
-                     </ol>
-                     <!-- END : Statistic list -->
+               <!-- Title and information -->
+               <h1 class="page-title d-flex flex-wrap just justify-content-center mb-2 mt-4">Manage posts</h1>
+               <p class="text-center lead mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, <br> esse corporis ipsam fuga ratione cum quisquam voluptas dolores ullam eius.</p>
+               <!-- END : Title and information -->
 
 
-                  </div>
-                  <div class="col-md-5">
-
-
-                     <!-- Doughnut Chart -->
-                     <div class="pt-4" style="height: 250px">
-                        <canvas id="_dm-doughnutChart"></canvas>
+               <!-- Search form -->
+               <div class="col-md-8 offset-md-2 mb-3">
+                  <form class="searchbox input-group">
+                     <input class="searchbox__input form-control form-control-lg" type="search" placeholder="Search posts. . ." aria-label="Search">
+                     <div class="searchbox__btn-group">
+                        <button class="searchbox__btn btn btn-icon bg-transparent shadow-none border-0 btn-sm" type="submit">
+                           <i class="demo-pli-magnifi-glass"></i>
+                        </button>
                      </div>
-                     <!-- END : Doughnut Chart -->
-
-                  </div>
+                  </form>
                </div>
+               <!-- END : Search form -->
 
 
+               <!-- Sort and categories filter -->
+               <div class="d-flex flex-wrap align-items-end justify-content-center gap-2 mb-3 pb-3">
+                  <div class="d-md-flex flex-wrap align-items-center gap-2 mb-3 mb-sm-0">
+                     <div class="text-center mb-2 mb-md-0">Only in category</div>
+                     <select class="form-select w-auto" aria-label="Categories">
+                        <option value="none" selected="">-Select category-</option>
+                        <option value="musics">Musics</option>
+                        <option value="photos">Photos</option>
+                        <option value="internet">Internet</option>
+                        <option value="sports">Sports</option>
+                     </select>
+                  </div>
+
+
+                  <div class="d-md-flex flex-wrap align-items-center gap-2 mb-3 mb-sm-0">
+                     <div class="text-center mb-2 mb-md-0">Sort by</div>
+                     <select class="form-select w-auto" aria-label="Sort options">
+                        <option value="date-created" selected="">Date Created</option>
+                        <option value="date-modified">Date Modified</option>
+                        <option value="frequency-used">Frequency Used</option>
+                        <option value="alpabetically">Alpabetically</option>
+                        <option value="alpabetically-reversed">Alpabetically Reversed</option>
+                     </select>
+                  </div>
+
+                  <button class="btn btn-light mb-3 mb-sm-0">Filter</button>
+               </div>
+               <!-- END : Sort and categories filter -->
             </div>
 
          </div>
 
 
-         <div class="bg-body-tertiary bg-opacity-20">
-
-            <div class="content__boxed">
-               <div class="content__wrap">
-
-
-                  <!-- Infographics -->
-                  <div class="row my-3 justify-content-center">
-                     <div class="col-md-4 col-lg-3">
-                        <div class="card text-center mb-3 mb-md-0">
-                           <div class="card-body">
-
-                              <div class="h1 my-4"><i class="demo-psi-data-settings display-3 text-body-emphasis opacity-20"></i></div>
-                              <p class="h4">Storage</p>
-                              <p class="text-body-emphasis fw-semibold">32TB Total storage</p>
-                              <small class="d-block text-body-secondary my-3">The Big Oxmox advised her not to do so, because there were thousands of bad.</small>
-                              <button class="btn btn-success mar-ver">Get it now</button>
-
-
-                           </div>
-                        </div>
-
-                     </div>
-                     <div class="col-md-4 col-lg-3">
-                        <div class="card text-center mb-3 mb-md-0">
-                           <div class="card-body">
-
-                              <div class="h1 my-4"><i class="demo-psi-computer-secure display-3 text-body-emphasis opacity-20"></i></div>
-                              <p class="h4">Secured</p>
-                              <p class="text-body-emphasis fw-semibold">Latest Technology</p>
-                              <small class="d-block text-body-secondary my-3">The Big Oxmox advised her not to do so, because there were thousands of bad.</small>
-                              <button class="btn btn-info mar-ver">View Reports</button>
-
-
-                           </div>
-                        </div>
-
-                     </div>
-                     <div class="col-md-4 col-lg-3">
-                        <div class="card text-center">
-                           <div class="card-body">
-
-                              <div class="h1 my-4"><i class="demo-psi-consulting display-3 text-body-emphasis opacity-20"></i></div>
-                              <p class="h4">Support</p>
-                              <p class="text-body-emphasis fw-semibold">We are here 24/7</p>
-                              <small class="d-block text-body-secondary my-3">The Big Oxmox advised her not to do so, because there were thousands of bad.</small>
-                              <button class="btn btn-danger mar-ver">Contact Us</button>
-
-
-                           </div>
-                        </div>
-
-                     </div>
-                  </div>
-                  <!-- END : Infographics -->
-
-
-               </div>
-            </div>
-
-
-         </div>
-
-
-         <div class="content__boxed pt-4">
+         <div class="content__boxed">
             <div class="content__wrap">
-
-               <!-- Tiles -->
-               <div class="row">
-                  <div class="col-sm-6 col-lg-3">
+               <div class="card">
+                  <div class="card-body">
 
 
-                     <!-- Stat widget -->
-                     <div class="card bg-cyan text-white mb-3 mb-xl-3 hv-grow">
-                        <div class="card-body py-3 d-flex align-items-stretch">
-                           <div class="d-flex align-items-center justify-content-center flex-shrink-0 rounded-start">
-                              <i class="demo-psi-file-word fs-1"></i>
-                           </div>
-                           <div class="flex-grow-1 ms-3">
-                              <h5 class="h2 mb-0">241</h5>
-                              <p class="mb-0">Documents</p>
-                           </div>
-                        </div>
+                     <!-- Blog post lists -->
+                     <div class="table-responsive">
+                        <table class="table table-striped align-middle">
+                           <thead>
+                              <tr>
+                                 <th width="55"></th>
+                                 <th>Post Title</th>
+                                 <th class="text-nowrap">Creation Date</th>
+                                 <th>Categories</th>
+                                 <th>Post by</th>
+                                 <th class="text-center">Status</th>
+                                 <th class="text-center">Actions</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td><img class="img-sm rounded" src="./assets/img/megamenu/img-1.jpg" alt="thumbs"></td>
+                                 <td><a class="btn-link text-body-emphasis text-decoration-underline text-truncate mb-0" href="#">Lorem ipsum dolor sit amet</a></td>
+                                 <td><span class="text-nowrap text-body-secondary">May 22, 2024</span></td>
+                                 <td>Internet</td>
+                                 <td><a href="#" class="btn-link text-nowrap">Betty Murphy</a></td>
+                                 <td class="h5">
+                                    <div class="d-block badge bg-success">Published</div>
+                                 </td>
+                                 <td>
+                                    <div class="text-nowrap text-center">
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover bg-body-tertiary"><i class="demo-pli-gear fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-primary"><i class="demo-pli-pen-5 fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-danger"><i class="demo-pli-trash fs-5"></i></a>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><img class="img-sm rounded" src="./assets/img/megamenu/img-3.jpg" alt="thumbs"></td>
+                                 <td><a class="btn-link text-body-emphasis text-decoration-underline text-truncate mb-0" href="#">The copy warned the Little Blind Text</a></td>
+                                 <td><span class="text-nowrap text-body-secondary">May 24, 2024</span></td>
+                                 <td>Movies</td>
+                                 <td><a href="#" class="btn-link text-nowrap">Jack George</a></td>
+                                 <td class="h5">
+                                    <div class="d-block badge bg-success">Published</div>
+                                 </td>
+                                 <td>
+                                    <div class="text-nowrap text-center">
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover bg-body-tertiary"><i class="demo-pli-gear fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-primary"><i class="demo-pli-pen-5 fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-danger"><i class="demo-pli-trash fs-5"></i></a>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><img class="img-sm rounded" src="./assets/img/megamenu/img-2.jpg" alt="thumbs"></td>
+                                 <td><a class="btn-link text-body-emphasis text-decoration-underline text-truncate mb-0" href="#">I should be incapable of drawing a single stroke</a></td>
+                                 <td><span class="text-nowrap text-body-secondary">May 24, 2024</span></td>
+                                 <td>Sports</td>
+                                 <td><a href="#" class="btn-link text-nowrap">Lucy Doe</a></td>
+                                 <td class="h5">
+                                    <div class="d-block badge bg-light text-dark">Unpublish</div>
+                                 </td>
+                                 <td>
+                                    <div class="text-nowrap text-center">
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover bg-body-tertiary"><i class="demo-pli-gear fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-primary"><i class="demo-pli-pen-5 fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-danger"><i class="demo-pli-trash fs-5"></i></a>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><img class="img-sm rounded" src="./assets/img/megamenu/img-4.jpg" alt="thumbs"></td>
+                                 <td><a class="btn-link text-body-emphasis text-decoration-underline text-truncate mb-0" href="#">Drops of rain could be heard hitting the pane</a></td>
+                                 <td><span class="text-nowrap text-body-secondary">May 15, 2024</span></td>
+                                 <td>Entertainment</td>
+                                 <td><a href="#" class="btn-link text-nowrap">Teresa L. Doe</a></td>
+                                 <td class="h5">
+                                    <div class="d-block badge bg-light text-dark">Unpublish</div>
+                                 </td>
+                                 <td>
+                                    <div class="text-nowrap text-center">
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover bg-body-tertiary"><i class="demo-pli-gear fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-primary"><i class="demo-pli-pen-5 fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-danger"><i class="demo-pli-trash fs-5"></i></a>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><img class="img-sm rounded" src="./assets/img/megamenu/img-6.jpg" alt="thumbs"></td>
+                                 <td><a class="btn-link text-body-emphasis text-decoration-underline text-truncate mb-0" href="#">How quickly daft jumping zebras</a></td>
+                                 <td><span class="text-nowrap text-body-secondary">May 12, 2024</span></td>
+                                 <td>Tutorial</td>
+                                 <td><a href="#" class="btn-link text-nowrap">Teresa L. Doe</a></td>
+                                 <td class="h5">
+                                    <div class="d-block badge bg-success">Published</div>
+                                 </td>
+                                 <td>
+                                    <div class="text-nowrap text-center">
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover bg-body-tertiary"><i class="demo-pli-gear fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-primary"><i class="demo-pli-pen-5 fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-danger"><i class="demo-pli-trash fs-5"></i></a>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><img class="img-sm rounded" src="./assets/img/megamenu/img-2.jpg" alt="thumbs"></td>
+                                 <td><a class="btn-link text-body-emphasis text-decoration-underline text-truncate mb-0" href="#">I should be incapable of drawing a single stroke</a></td>
+                                 <td><span class="text-nowrap text-body-secondary">May 24, 2024</span></td>
+                                 <td>Sports</td>
+                                 <td><a href="#" class="btn-link text-nowrap">Lucy Doe</a></td>
+                                 <td class="h5">
+                                    <div class="d-block badge bg-light text-dark">Unpublish</div>
+                                 </td>
+                                 <td>
+                                    <div class="text-nowrap text-center">
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover bg-body-tertiary"><i class="demo-pli-gear fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-primary"><i class="demo-pli-pen-5 fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-danger"><i class="demo-pli-trash fs-5"></i></a>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><img class="img-sm rounded" src="./assets/img/megamenu/img-5.jpg" alt="thumbs"></td>
+                                 <td><a class="btn-link text-body-emphasis text-decoration-underline text-truncate mb-0" href="#">The copy warned the Little Blind Text</a></td>
+                                 <td><span class="text-nowrap text-body-secondary">May 24, 2024</span></td>
+                                 <td>Movies</td>
+                                 <td><a href="#" class="btn-link text-nowrap">Jack George</a></td>
+                                 <td class="h5">
+                                    <div class="d-block badge bg-success">Published</div>
+                                 </td>
+                                 <td>
+                                    <div class="text-nowrap text-center">
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover bg-body-tertiary"><i class="demo-pli-gear fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-primary"><i class="demo-pli-pen-5 fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-danger"><i class="demo-pli-trash fs-5"></i></a>
+                                    </div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td><img class="img-sm rounded" src="./assets/img/megamenu/img-1.jpg" alt="thumbs"></td>
+                                 <td><a class="btn-link text-body-emphasis text-decoration-underline text-truncate mb-0" href="#">I should be incapable of drawing a single stroke</a></td>
+                                 <td><span class="text-nowrap text-body-secondary">May 24, 2024</span></td>
+                                 <td>Sports</td>
+                                 <td><a href="#" class="btn-link text-nowrap">Lucy Doe</a></td>
+                                 <td class="h5">
+                                    <div class="d-block badge bg-light text-dark">Unpublish</div>
+                                 </td>
+                                 <td>
+                                    <div class="text-nowrap text-center">
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover bg-body-tertiary"><i class="demo-pli-gear fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-primary"><i class="demo-pli-pen-5 fs-5"></i></a>
+                                       <a href="#" class="btn btn-icon btn-sm btn-hover btn-danger"><i class="demo-pli-trash fs-5"></i></a>
+                                    </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
                      </div>
-                     <!-- END : Stat widget -->
+                     <!-- END : Blog post lists -->
 
 
-                  </div>
-                  <div class="col-sm-6 col-lg-3">
+                     <div class="mt-4 d-flex justify-content-center">
 
+                        <!-- Pagination - Disabled and active states -->
+                        <nav aria-label="Page navigation">
+                           <ul class="pagination">
+                              <li class="page-item disabled">
+                                 <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item active" aria-current="page">
+                                 <a class="page-link" href="#">2</a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item"><a class="page-link" href="#">4</a></li>
+                              <li class="page-item"><a class="page-link" href="#">5</a></li>
+                              <li class="page-item">
+                                 <a class="page-link" href="#">Next</a>
+                              </li>
+                           </ul>
+                        </nav>
+                        <!-- END : Pagination - Disabled and active states -->
 
-                     <!-- Stat widget -->
-                     <div class="card bg-purple text-white mb-3 mb-xl-3 hv-grow">
-                        <div class="card-body py-3 d-flex align-items-stretch">
-                           <div class="d-flex align-items-center justify-content-center flex-shrink-0 rounded-start">
-                              <i class="demo-psi-file-zip fs-1"></i>
-                           </div>
-                           <div class="flex-grow-1 ms-3">
-                              <h5 class="h2 mb-0">184</h5>
-                              <p class="mb-0">Compressed files</p>
-                           </div>
-                        </div>
                      </div>
-                     <!-- END : Stat widget -->
-
-
-                  </div>
-                  <div class="col-sm-6 col-lg-3">
-
-
-                     <!-- Stat widget -->
-                     <div class="card bg-orange text-white mb-3 mb-xl-3 hv-grow">
-                        <div class="card-body py-3 d-flex align-items-stretch">
-                           <div class="d-flex align-items-center justify-content-center flex-shrink-0 rounded-start">
-                              <i class="demo-psi-camera-2 fs-1"></i>
-                           </div>
-                           <div class="flex-grow-1 ms-3">
-                              <h5 class="h2 mb-0">859</h5>
-                              <p class="mb-0">Photos</p>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- END : Stat widget -->
-
-
-                  </div>
-                  <div class="col-sm-6 col-lg-3">
-
-
-                     <!-- Stat widget -->
-                     <div class="card bg-pink text-white mb-3 mb-xl-3 hv-grow">
-                        <div class="card-body py-3 d-flex align-items-stretch">
-                           <div class="d-flex align-items-center justify-content-center flex-shrink-0 rounded-start">
-                              <i class="demo-psi-video fs-1"></i>
-                           </div>
-                           <div class="flex-grow-1 ms-3">
-                              <h5 class="h2 mb-0">785</h5>
-                              <p class="mb-0">Compressed files</p>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- END : Stat widget -->
-
-
-                  </div>
-               </div>
-               <!-- END : Tiles -->
-
-
-               <div class="row">
-                  <div class="col-md-6 mb-3">
-
-
-                     <!-- News Feed -->
-                     <div class="card h-100">
-                        <div class="card-header">
-                           <h5 class="card-title mb-0">News Feed</h5>
-                        </div>
-                        <div class="card-body p-0 overflow-scroll scrollable-content" style="height: 350px;">
-
-                           <div class="card-body">
-                              <h5>Uniform gramma</h5>
-                              <p>To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.</p>
-                              <div class="mt-4 pt-3 border-top d-flex align-items-center gap-2">
-                                 <div class="badge bg-info">Feature Request</div>
-                                 <div class="badge bg-danger">Bug</div>
-                              </div>
-                           </div>
-
-                           <div class="card-body bg-body-tertiary bg-opacity-50">
-                              <h5>River</h5>
-                              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                              <div class="mt-2 pt-2 border-top d-flex align-items-center">
-                                 <div class="d-flex gap-1">
-                                    <a href="#" class="btn btn-hover btn-primary px-2 py-1">
-                                       <i class="demo-pli-heart-2 fs-5 me-2"></i>87
-                                    </a>
-                                    <a href="#" class="btn btn-hover btn-primary px-2 py-1">
-                                       <i class="demo-pli-speech-bubble-4 fs-5 me-2"></i>107
-                                    </a>
-                                 </div>
-                                 <small class="text-body-secondary ms-auto">9:25AM</small>
-                              </div>
-                           </div>
-
-                           <img class="img-fluid" src="./assets/img/sample-img/img-3.jpg" alt="sunrice" loading="lazy">
-                           <div class="card-body">
-                              <h5>Just me</h5>
-                              <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.</p>
-                              <div class="mt-2 pt-2 border-top d-flex align-items-center">
-                                 <a href="#" class="btn btn-hover btn-primary px-2 py-1">
-                                    <i class="demo-pli-heart-2 fs-5 me-2"></i>37k
-                                 </a>
-                                 <small class="text-body-secondary ms-auto">06:13PM</small>
-                              </div>
-                           </div>
-
-                           <div class="card-body bg-body-tertiary bg-opacity-50">
-                              <h5>Languages</h5>
-                              <p>The European languages are members of the same family. Their separate existence is a myth.</p>
-                              <div class="mt-2 pt-3 border-top d-flex align-items-center">
-                                 <div class="position-relative hv-outline-parent">
-                                    <img class="hv-oc img-xs rounded-circle me-2" src="./assets/img/profile-photos/1.png" alt="task-user">
-                                    <a href="#" class="fw-semibold stretched-link btn-link text-decoration-underline">Aaron Chavez</a>
-                                 </div>
-                                 <small class="text-body-secondary ms-auto">10:45AM</small>
-                              </div>
-                           </div>
-
-                        </div>
-                     </div>
-                     <!-- END : News Feed -->
-
-
-                  </div>
-                  <div class="col-md-6 mb-3">
-
-
-                     <!-- Top Users table -->
-                     <div class="card">
-                        <div class="card-body">
-                           <h5 class="card-title">Top Users</h5>
-                           <div class="table-responsive">
-                              <table class="table table-striped">
-                                 <thead>
-                                    <tr>
-                                       <th class="text-center">#</th>
-                                       <th>User</th>
-                                       <th>Order date</th>
-                                       <th class="text-center">Plan</th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                    <tr>
-                                       <td class="text-center">34521</td>
-                                       <td><a href="#" class="btn-link">Scott S. Calabrese</a></td>
-                                       <td><span class="text-body-secondary">May 10, 2024</span></td>
-                                       <td><span class="d-block badge bg-purple">Bussines</span></td>
-                                    </tr>
-                                    <tr>
-                                       <td class="text-center">23422</td>
-                                       <td><a href="#" class="btn-link">Teresa L. Doe</a></td>
-                                       <td><span class="text-body-secondary">May 22, 2024</span></td>
-                                       <td><span class="d-block badge bg-info">Personal</span></td>
-                                    </tr>
-                                    <tr>
-                                       <td class="text-center">73455</td>
-                                       <td><a href="#" class="btn-link">Steve N. Horton</a></td>
-                                       <td><span class="text-body-secondary">May 22, 2024</span></td>
-                                       <td><span class="d-block badge bg-warning">Trial</span></td>
-                                    </tr>
-                                    <tr>
-                                       <td class="text-center">34523</td>
-                                       <td><a href="#" class="btn-link">Charles S Boyle</a></td>
-                                       <td><span class="text-body-secondary">Jun 03, 2024</span></td>
-                                       <td><span class="d-block badge bg-purple">Bussines</span></td>
-                                    </tr>
-                                    <tr>
-                                       <td class="text-center">74634</td>
-                                       <td><a href="#" class="btn-link">Lucy Doe</a></td>
-                                       <td><span class="text-body-secondary">Jun 05, 2024</span></td>
-                                       <td><span class="d-block badge bg-success">Special</span></td>
-                                    </tr>
-                                    <tr>
-                                       <td class="text-center">23423</td>
-                                       <td><a href="#" class="btn-link">Michael Bunr</a></td>
-                                       <td><span class="text-body-secondary">Jun 07, 2024</span></td>
-                                       <td><span class="d-block badge bg-info">Personal</span></td>
-                                    </tr>
-                                    <tr>
-                                       <td class="text-center">23422</td>
-                                       <td><a href="#" class="btn-link">Teresa L. Doe</a></td>
-                                       <td><span class="text-body-secondary">Jun 10, 2024</span></td>
-                                       <td><span class="d-block badge bg-info">Personal</span></td>
-                                    </tr>
-                                    <tr>
-                                       <td class="text-center">73455</td>
-                                       <td><a href="#" class="btn-link">Steve N. Horton</a></td>
-                                       <td><span class="text-body-secondary">Jun 10, 2024</span></td>
-                                       <td><span class="d-block badge bg-danger">VIP</span></td>
-                                    </tr>
-                                    <tr>
-                                       <td class="text-center">34521</td>
-                                       <td><a href="#" class="btn-link">Scott S. Calabrese</a></td>
-                                       <td><span class="text-body-secondary">Jun 11, 2024</span></td>
-                                       <td><span class="d-block badge bg-purple">Bussines</span></td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                           </div>
-
-                        </div>
-                     </div>
-
-                     <!-- END : Top Users table -->
 
 
                   </div>
                </div>
+
 
             </div>
          </div>
@@ -485,85 +363,84 @@
       <!-- HEADER -->
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
       <header class="header">
-         <div class="header__inner">
+   <div class="header__inner">
 
-            <!-- Brand -->
-            <div class="header__brand">
-               <div class="brand-wrap">
+      <!-- Brand -->
+      <div class="header__brand">
+         <div class="brand-wrap">
 
-                  <!-- Brand logo -->
-                  <a href="index.html" class="brand-img stretched-link">
-                     <img src="./assets/img/logo.svg" alt="Nifty Logo" class="Nifty logo" width="16" height="16">
-                  </a>
-
-
-                  <!-- Brand title -->
-                  <div class="brand-title">Nifty</div>
+            <!-- Brand logo -->
+            <a href="index.html" class="brand-img stretched-link">
+               <img src="./assets/img/logo.svg" alt="Nifty Logo" class="Nifty logo" width="16" height="16">
+            </a>
 
 
-                  <!-- You can also use IMG or SVG instead of a text element. -->
-                  <!--
-            <div class="brand-title">
-               <img src="./assets/img/brand-title.svg" alt="Brand Title">
-            </div>
-            -->
-
-               </div>
-            </div>
-            <!-- End - Brand -->
+            <!-- Brand title -->
+            <div class="brand-title">Nifty</div>
 
 
-            <div class="header__content">
+            <!-- You can also use IMG or SVG instead of a text element. -->
+            <!--
+      <div class="brand-title">
+         <img src="./assets/img/brand-title.svg" alt="Brand Title">
+      </div>
+      -->
 
-               <!-- Content Header - Left Side: -->
-               <div class="header__content-start">
-
-
-                  <!-- Navigation Toggler -->
-                  <button type="button" class="nav-toggler header__btn btn btn-icon btn-sm" aria-label="Nav Toggler">
-                     <i class="demo-psi-list-view"></i>
-                  </button>
-
-                  <div class="vr mx-1 d-none d-md-block"></div>
-
-                  <!-- Searchbox -->
-                  
-
-                     <!-- Searchbox toggler for small devices -->
-                     
-
-                     <!-- Searchbox input -->
-                        
-                 
-               </div>
-               <!-- End - Content Header - Left Side -->
-
-
-               <!-- Content Header - Right Side: -->
-               <div class="header__content-end">
-
-
-
-                  <div class="vr mx-1 d-none d-md-block"></div>
-
-                  <div class="form-check form-check-alt form-switch mx-md-2">
-                     <input id="headerThemeToggler" class="form-check-input mode-switcher" type="checkbox" role="switch">
-                     <label class="form-check-label ps-1 fw-bold d-none d-md-flex align-items-center " for="headerThemeToggler">
-                        <i class="mode-switcher-icon icon-light demo-psi-sun fs-5"></i>
-                        <i class="mode-switcher-icon icon-dark d-none demo-psi-half-moon"></i>
-                     </label>
-                  </div>
-
-                  <div class="vr mx-1 d-none d-md-block"></div>
-
-                  <!-- Sidebar Toggler -->
-                  
-
-
-               </div>
-            </div>
          </div>
-      </header>
+      </div>
+      <!-- End - Brand -->
+
+
+      <div class="header__content">
+
+         <!-- Content Header - Left Side: -->
+         <div class="header__content-start">
+
+
+            <!-- Navigation Toggler -->
+            <button type="button" class="nav-toggler header__btn btn btn-icon btn-sm" aria-label="Nav Toggler">
+               <i class="demo-psi-list-view"></i>
+            </button>
+
+            <div class="vr mx-1 d-none d-md-block"></div>
+
+            <!-- Searchbox -->
+            
+
+               <!-- Searchbox toggler for small devices -->
+               
+
+               <!-- Searchbox input -->
+                  
+           
+         </div>
+         <!-- End - Content Header - Left Side -->
+
+
+         <!-- Content Header - Right Side: -->
+         <div class="header__content-end">
+
+
+            <div class="vr mx-1 d-none d-md-block"></div>
+
+            <div class="form-check form-check-alt form-switch mx-md-2">
+               <input id="headerThemeToggler" class="form-check-input mode-switcher" type="checkbox" role="switch">
+               <label class="form-check-label ps-1 fw-bold d-none d-md-flex align-items-center " for="headerThemeToggler">
+                  <i class="mode-switcher-icon icon-light demo-psi-sun fs-5"></i>
+                  <i class="mode-switcher-icon icon-dark d-none demo-psi-half-moon"></i>
+               </label>
+            </div>
+
+            <div class="vr mx-1 d-none d-md-block"></div>
+
+            <!-- Sidebar Toggler -->
+            
+
+
+         </div>
+      </div>
+   </div>
+</header>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
       <!-- END - HEADER -->
 
@@ -601,13 +478,22 @@
 
                         <!-- Collapsed user menu -->
                         <div id="usernav" class="nav flex-column collapse">
-                           
-                           
+                           <a href="#" class="nav-link d-flex justify-content-between align-items-center">
+                              <span><i class="demo-pli-mail fs-5 me-2"></i><span class="ms-1">Messages</span></span>
+                              <span class="badge bg-danger rounded-pill">14</span>
+                           </a>
+                           <a href="#" class="nav-link">
+                              <i class="demo-pli-male fs-5 me-2"></i>
+                              <span class="ms-1">Profile</span>
+                           </a>
                            <a href="#" class="nav-link">
                               <i class="demo-pli-gear fs-5 me-2"></i>
                               <span class="ms-1">Settings</span>
                            </a>
-                          
+                           <a href="#" class="nav-link">
+                              <i class="demo-pli-computer-secure fs-5 me-2"></i>
+                              <span class="ms-1">Lock screen</span>
+                           </a>
                            <a href="#" class="nav-link">
                               <i class="demo-pli-unlock fs-5 me-2"></i>
                               <span class="ms-1">Logout</span>
@@ -623,82 +509,77 @@
 
 
                <!-- Navigation Category -->
-                    <div class="mainnav__categoriy py-3">
-                        <ul class="mainnav__menu nav flex-column">
-                            <li class="nav-item">
-                                <a href="./dashboard3.html" class="nav-link mininav-toggle"><i class="demo-pli-home fs-5 me-2"></i>
-
-                                    <span class="nav-label mininav-content ms-1">
-                                        <span data-popper-arrow class="arrow"></span>
-                                        Dashboard
-                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-    <!-- END : Navigation Category -->
-
-
-
-                     
-
-                        <!-- Blog Apps submenu list -->
-                      <!-- Manage Posts --> 
-                      <div class="mainnav__categoriy py-3"> 
-                         <ul class="mainnav__menu nav flex-column">
-                         <li class="nav-item">
-                         <a href="./blog-apps-manage-posts.html" class="nav-link mininav-toggle"><i class="demo-pli-receipt-4 fs-5 me-2"></i>
-
-                         <span class="nav-label mininav-content ms-1">
-                         <span data-popper-arrow class="arrow"></span>
-                         Manage Posts
-                         </span>
-                         </a>
-                         </li>
-                         </ul>
-                      </div>  
-                      <!-- End Manage Posts -->
-
-                    <div class="mainnav__categoriy py-3">
-                        <ul class="mainnav__menu nav flex-column">
-                            <li class="nav-item">
-                                <a href="./blog-add-edit-posts.html" class="nav-link mininav-toggle"><i class="demo-pli-pen-5 fs-5 me-2"></i>
-
-                                    <span class="nav-label mininav-content ms-1">
-                                        <span data-popper-arrow class="arrow"></span>
-                                        Edit Posts
-                   </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                   <!-- Video Posts -->
-
+                         <!-- Navigation Category -->
                 <div class="mainnav__categoriy py-3">
                     <ul class="mainnav__menu nav flex-column">
                         <li class="nav-item">
-                            <a href="./Video_Posts.aspx" class="nav-link mininav-toggle"><i class="demo-pli-computer-secure fs-5 me-2"></i>
+                            <a href="./dashboard3.html" class="nav-link mininav-toggle"><i class="demo-pli-home fs-5 me-2"></i>
 
                                 <span class="nav-label mininav-content ms-1">
                                     <span data-popper-arrow class="arrow"></span>
-                                    Video Posts
+                                    Dashboard
                 </span>
                             </a>
                         </li>
                     </ul>
                 </div>
 
+<!-- END : Navigation Category -->
 
 
 
+                 
+
+                    <!-- Blog Apps submenu list -->
+                  <!-- Manage Posts --> 
+                  <div class="mainnav__categoriy py-3"> 
+                     <ul class="mainnav__menu nav flex-column">
+                     <li class="nav-item">
+                     <a href="./blog-apps-manage-posts.html" class="nav-link mininav-toggle"><i class="demo-pli-receipt-4 fs-5 me-2"></i>
+
+                     <span class="nav-label mininav-content ms-1">
+                     <span data-popper-arrow class="arrow"></span>
+                     Manage Posts
+                     </span>
+                     </a>
+                     </li>
+                     </ul>
+                  </div>  
+                  <!-- End Manage Posts -->
+
+                <div class="mainnav__categoriy py-3">
+                    <ul class="mainnav__menu nav flex-column">
+                        <li class="nav-item">
+                            <a href="./blog-add-edit-posts.html" class="nav-link mininav-toggle"><i class="demo-pli-pen-5 fs-5 me-2"></i>
+
+                                <span class="nav-label mininav-content ms-1">
+                                    <span data-popper-arrow class="arrow"></span>
+                                    Edit Posts
+               </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+               <!-- Video Posts -->
+
+            <div class="mainnav__categoriy py-3">
+                <ul class="mainnav__menu nav flex-column">
+                    <li class="nav-item">
+                        <a href="./Video_Posts.aspx" class="nav-link mininav-toggle"><i class="demo-pli-computer-secure fs-5 me-2"></i>
+
+                            <span class="nav-label mininav-content ms-1">
+                                <span data-popper-arrow class="arrow"></span>
+                                Video Posts
+            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
 
 
-    <!-- END : Blog Apps submenu list -->
-
-
+               <!-- END : Navigation Category -->
 
 
             </div>
@@ -1220,7 +1101,7 @@
 
    <!-- SETTINGS CONTAINER [ DEMO ] -->
    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-  
+   
    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
    <!-- END - SETTINGS CONTAINER [ DEMO ] -->
 
@@ -1264,14 +1145,6 @@
 
    <!-- Nifty Settings [ DEMO ] -->
    <script src="./assets/js/demo-purpose-only.js"></script>
-
-
-   <!-- Chart JS Scripts [ OPTIONAL ] -->
-   <script src="./assets/vendors/chart.js/chart.umd.min.js"></script>
-
-
-   <!-- Initialize [ SAMPLE ] -->
-   <script src="./assets/pages/dashboard-3.js"></script>
 
 
 </body>
