@@ -478,22 +478,13 @@
 
                         <!-- Collapsed user menu -->
                         <div id="usernav" class="nav flex-column collapse">
-                           <a href="#" class="nav-link d-flex justify-content-between align-items-center">
-                              <span><i class="demo-pli-mail fs-5 me-2"></i><span class="ms-1">Messages</span></span>
-                              <span class="badge bg-danger rounded-pill">14</span>
-                           </a>
-                           <a href="#" class="nav-link">
-                              <i class="demo-pli-male fs-5 me-2"></i>
-                              <span class="ms-1">Profile</span>
-                           </a>
+                           
+                           
                            <a href="#" class="nav-link">
                               <i class="demo-pli-gear fs-5 me-2"></i>
                               <span class="ms-1">Settings</span>
                            </a>
-                           <a href="#" class="nav-link">
-                              <i class="demo-pli-computer-secure fs-5 me-2"></i>
-                              <span class="ms-1">Lock screen</span>
-                           </a>
+                           
                            <a href="#" class="nav-link">
                               <i class="demo-pli-unlock fs-5 me-2"></i>
                               <span class="ms-1">Logout</span>
