@@ -530,79 +530,72 @@
                   </div>
 
                </div>
-               <!-- End - Profile widget -->
+                       <!-- End - Profile widget -->
+ 
 
-
-               <!-- Navigation Category -->
-             <div class="mainnav__categoriy py-3">
-            <ul class="mainnav__menu nav flex-column">
-                <li class="nav-item">
-                    <a href="./dashboard3.html" class="nav-link mininav-toggle"><i class="demo-pli-home fs-5 me-2"></i>
-
-                        <span class="nav-label mininav-content ms-1">
-                            <span data-popper-arrow class="arrow"></span>
-                            Dashboard
-        </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-               <!-- END : Navigation Category -->
-
-
-               
-               <!-- END : Components Category -->
-
-
-                                 <!-- Manage Posts --> 
-                   <div class="mainnav__categoriy py-3"> 
-                      <ul class="mainnav__menu nav flex-column">
-                      <li class="nav-item">
-                      <a href="./blog-apps-manage-posts.html" class="nav-link mininav-toggle"><i class="demo-pli-receipt-4 fs-5 me-2"></i>
-
-                      <span class="nav-label mininav-content ms-1">
-                      <span data-popper-arrow class="arrow"></span>
-                      Manage Posts
-                      </span>
-                      </a>
-                      </li>
-                      </ul>
-                   </div>  
-                   <!-- End Manage Posts -->
-                   <!-- Edit Posts -->
-                     <div class="mainnav__categoriy py-3">
-                         <ul class="mainnav__menu nav flex-column">
-                             <li class="nav-item">
-                                 <a href="./blog-add-edit-posts.html" class="nav-link mininav-toggle"><i class="demo-pli-pen-5 fs-5 me-2"></i>
-
+                    <!-- Dashboard -->              
+                            <div class="mainnav__categoriy py-3">
+                               <ul class="mainnav__menu nav flex-column">
+                                 <li class="nav-item">
+                                   <a href="./Default.aspx" class="nav-link mininav-toggle"><i class="demo-pli-home fs-5 me-2"></i>
                                      <span class="nav-label mininav-content ms-1">
-                                         <span data-popper-arrow class="arrow"></span>
-                                         Edit Posts
-                    </span>
-                                 </a>
-                             </li>
-                         </ul>
-                     </div>
+                                            <span data-popper-arrow class="arrow"></span>
+                                            Dashboard
+                                     </span>
+                                   </a>
+                                 </li>
+                               </ul>
+                            </div>
+                   <!-- End Dashboard -->            
 
-               <!-- End Edit Posts -->
-               <!-- Video Posts -->
+                   <!-- Manage Posts --> 
+                            <div class="mainnav__categoriy py-3"> 
+                                <ul class="mainnav__menu nav flex-column">
+                                  <li class="nav-item">
+                                    <a href="./Post_Managment.aspx" class="nav-link mininav-toggle"><i class="demo-pli-receipt-4 fs-5 me-2"></i>
+                                      <span class="nav-label mininav-content ms-1">
+                                             <span data-popper-arrow class="arrow"></span>
+                                             Manage Posts
+                                      </span>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </div>  
+                   <!-- End Manage Posts -->
 
-                <div class="mainnav__categoriy py-3">
-                    <ul class="mainnav__menu nav flex-column">
-                        <li class="nav-item">
-                            <a href="./Video_Posts.aspx" class="nav-link mininav-toggle"><i class="demo-pli-computer-secure fs-5 me-2"></i>
+                   <!-- Edit Posts -->
+                            <div class="mainnav__categoriy py-3">
+                                <ul class="mainnav__menu nav flex-column">
+                                  <li class="nav-item">
+                                    <a href="./Edit_Posts.aspx" class="nav-link mininav-toggle"><i class="demo-pli-pen-5 fs-5 me-2"></i>
+                                      <span class="nav-label mininav-content ms-1">
+                                             <span data-popper-arrow class="arrow"></span>
+                                             Edit Posts
+                                      </span>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </div>
 
-                                <span class="nav-label mininav-content ms-1">
-                                    <span data-popper-arrow class="arrow"></span>
-                                    Video Posts
-                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-              <!-- End Video Posts -->
+                   <!-- End Edit Posts -->
+
+                   <!-- Video Posts -->
+
+                           <div class="mainnav__categoriy py-3">
+                              <ul class="mainnav__menu nav flex-column">
+                                <li class="nav-item">
+                                  <a href="./Video_Posts.aspx" class="nav-link mininav-toggle"><i class="demo-pli-computer-secure fs-5 me-2"></i>
+                                    <span class="nav-label mininav-content ms-1">
+                                           <span data-popper-arrow class="arrow"></span>
+                                           Video Posts
+                                    </span>
+                                  </a>
+                                </li>
+                              </ul>
+                           </div>
+                   <!-- End Video Posts -->
             
-            <!-- End - Navigation menu -->
+     <!-- End - Navigation menu -->
 
 
             <!-- Bottom navigation menu -->
@@ -637,11 +630,7 @@
       <!-- END - MAIN NAVIGATION -->
 
 
-      <!-- SIDEBAR -->
-      
-      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-      <!-- END - SIDEBAR -->
-
+     
 
    </div>
    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
